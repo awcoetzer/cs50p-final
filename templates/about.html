@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block head_desc %}
+<meta name="description"
+      content="Todo Juggler was created for the CS50P final project. Todo Juggler allows you to manage your tasks, with the ability to mark them as completed and keep track of what has been done">
+{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block head_ionicons %}
+<script type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+{% endblock %}
+
+{% block main_content %}
+<section class="section__padding section__hero">
+  <div class="container container__hero">
+    <div class="hero grid grid__2-cols grid__center-v">
+      {# hero text box #}
+      <div class="hero__text-box">
+        <span class="pre__heading">
+          About
+        </span>
+        <h1 class="heading__primary">
+          Task Juggler
+        </h1>
+        <p class="hero__text">
+          Task Juggler is a Python-based task manager application designed for efficient task organization and management.
+          Developed as the final project for Harvard's CS50P course, the application utilizes the Flask microframework to create a
+          user-friendly web interface for handling tasks. Unlike traditional console-based task managers, Task Juggler offers a
+          visually appealing and interactive platform for users to manage their to-do lists.
+        </p>
+        <a class="link link__hero"
+           href="https://github.com/awcoetzer/cs50p-final"
+           target="_blank">Site Repository</a>
+      </div>
+
+      {# hero img box #}
+      <picture class="hero__img-box">
+        <source srcset="{{ url_for('static', filename='images/hero/hero.webp') }}"
+                type="image/webp">
+        <source srcset="{{ url_for('static', filename='images/hero/hero-min.png') }}"
+                type="image/png">
+        <img src="{{ url_for('static', filename='images/hero/hero-min.png') }}"
+             alt=""
+             class="hero__img">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="section__padding section__features">
+  <div class="container">
+    <span class="pre__heading">
+      Features
+    </span>
+    <h2 class="heading__secondary">
+      Explore Our Features
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="features">
+      {# feature block 1 #}
+      <div class="feature__block">
+        <ion-icon class="feature__icon"
+                  name="create-outline"></ion-icon>
+
+        <h3 class="heading__tertairy heading__tertiary-feature">
+          Task Creation & Storage
+        </h3>
+
+        <ul class="feature__text-list">
+          <li class="feature__text-item">
+            Allows users to input a heading and a task.
+          </li>
+          <li class="feature__text-item">
+            Saves the task to a MongoDB database for future reference.
+          </li>
+          <li class="feature__text-item">
+            Basic CRUD operations for managing tasks (create, read, update, delete).
+          </li>
+        </ul>
+
+      </div>
+
+      {# feature block 2 #}
+      <div class="feature__block">
+        <ion-icon class="feature__icon"
+                  name="checkbox-outline"></ion-icon>
+
+        <h3 class="heading__tertairy heading__tertiary-feature">
+          Task Completion & History
+        </h3>
+
+        <ul class="feature__text-list">
+          <li class="feature__text-item">
+            Provides an option to mark tasks as completed.
+          </li>
+          <li class="feature__text-item">
+            Moves completed tasks to a separate "history" section.
+          </li>
+          <li class="feature__text-item">
+            Users can view and manage completed tasks in the history section.
+          </li>
+          <li class="feature__text-item">
+            Supports the ability to delete tasks from the history.
+          </li>
+        </ul>
+      </div>
+
+      {# feature block 3 #}
+      <div class="feature__block">
+        <ion-icon class="feature__icon"
+                  name="extension-puzzle-outline"></ion-icon>
+
+        <h3 class="heading__tertairy heading__tertiary-feature">
+          User-friendly interface
+        </h3>
+
+        <ul class="feature__text-list">
+          <li class="feature__text-item">
+            Implements a web interface using Flask for a seamless user experience.
+          </li>
+          <li class="feature__text-item">
+            Users can navigate through different sections (main, history, about).
+          </li>
+          <li class="feature__text-item">
+            Offers an intuitive interface for adding, viewing, and managing tasks.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section__padding section__about">
+  {# about heading #}
+  <div class="container">
+    <span id="learn__more" class="pre__heading">
+      Learn More
+    </span>
+    <h2 class="heading__secondary">
+      What the app is about
+    </h2>
+  </div>
+
+  {# about #}
+  <div class="container">
+    <div class="about">
+      <p class="about__text">
+        Task Juggler is a Python-based task manager application designed for efficient task organization and management.
+        Developed as the final project for Harvard's CS50P course, the application utilizes the Flask microframework to create a
+        user-friendly web interface for handling tasks. Unlike traditional console-based task managers, Task Juggler offers a
+        visually appealing and interactive platform for users to manage their to-do lists.
+      </p>
+      <p class="about__text">
+        Upon accessing the Task Juggler app, users are greeted with a straightforward interface that allows them to
+        input a
+        heading for their task, providing a quick way to categorize and organize their responsibilities. The app goes
+        beyond
+        simple text input by enabling users to provide detailed information about each task they enter.
+      </p>
+      <p class="about__text">
+        Once a task is added, Task Juggler stores it in a database, ensuring that users can access and manage their
+        tasks
+        seamlessly. The tasks are prominently displayed in the "todos" section, providing users with an easily
+        accessible
+        overview of their pending responsibilities.
+      </p>
+      <p class="about__text">
+        Task Juggler enhances task management by offering users the flexibility to either delete a task or mark it as
+        completed. If a task is marked as complete, it is gracefully transitioned to the "history" section, accompanied
+        by
+        information such as the entry date and the completion date. This feature not only provides a historical record
+        of
+        completed tasks but also allows users to track their productivity over time.
+      </p>
+      <p class="about__text">
+        The decision to use Flask for the web framework reflects a strategic choice to explore and implement a modern
+        and
+        lightweight technology stack for web development. Flask's simplicity and flexibility align well with the
+        project's
+        objectives, allowing for a smooth integration of web functionality into the task management application.
+      </p>
+      <p class="about__text">
+        In summary, Task Juggler is a user-centric and visually engaging task manager that leverages the Flask
+        microframework
+        to create a dynamic web interface. It offers a comprehensive solution for entering, organizing, and tracking
+        tasks,
+        making it a valuable tool for individuals seeking an effective way to manage their to-do lists with a modern and
+        accessible approach.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

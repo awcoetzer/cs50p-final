@@ -1,0 +1,50 @@
+# Personal Files
+exercise-files/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE and Text Editor Files
+.idea/
+.vscode/
+*.pyc
+__pycache__/
+.project
+
+# Virtual Environments
+venv/
+env/
+
+# Dependency Management
+node_modules/
+yarn.lock
+package-lock.json
+
+# Compiled Code and Binaries
+*.class
+*.jar
+*.war
+*.pyc
+
+# Logs and Temporary Files
+*.log
+*.tmp
+
+# Configuration Files
+.env
+.env.local
+*.config
+
+# Web Development
+public/
+build/
+
+# Miscellaneous
+.travis.yml
+.coverage
+
+# Personal Configuration
+.vscode/settings.json
+.editorconfig

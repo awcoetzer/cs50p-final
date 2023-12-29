@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block head_desc %}
+<meta name="description"
+      content="Todo Juggler was created for the CS50P final project. Todo Juggler allows you to manage your tasks, with the ability to mark them as completed and keep track of what has been done">
+{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block head_ionicons %}
+<script type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+{% endblock %}
+
+{% block main_content %}
+<section class="section__padding section__interface">
+  <div class="container container__interface">
+    <div class="interface grid grid__3-cols">
+      {# left block #}
+      <section class="section__padding section__column section__column-input">
+        <div class="container container__column">
+          <div class="column">
+            <div class="column__heading-box">
+              <h2 class="heading__secondary heading__secondary-column-heading"
+                  data-name="Add">
+                Add
+              </h2>
+            </div>
+
+            <div class="column__app-box">
+              <form class="form__todo-juggler"
+                    method="POST">
+                <div class="input__box">
+                  <label class="pre__heading pre__heading-input"
+                         for="heading">Task Heading</label>
+                  <input class="form__todo-juggler-input"
+                         type="text"
+                         name="heading"
+                         id="heading"
+                         maxlength="50"
+                         placeholder="Health and Fitness Goals"
+                         required>
+                </div>
+
+                <div class="input__box">
+                  <label class="pre__heading pre__heading-input"
+                         for="todo">Task Details</label>
+                  <textarea class="form__todo-juggler-input"
+                            name="todo"
+                            id="todo"
+                            rows="10"
+                            placeholder="Go for a 30-minute jog in the park"
+                            required></textarea>
+                </div>
+
+                <button class="btn btn__add"
+                        type="submit">
+                  <ion-icon class="btn__icon"
+                            name="add-outline"></ion-icon>
+                  <span class="btn__text"></span>
+                </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {# middle block #}
+      <section class="section__padding section__column section__column-task">
+        <div class="container container__column">
+          <div class="column">
+            <div class="column__heading-box">
+              <h2 class="heading__secondary heading__secondary-column-heading"
+                  data-name="To-do's">
+                To-do's
+              </h2>
+            </div>
+
+            <div class="column__app-box">
+              {% for todo in get_todos %}
+              <div class="todo">
+                <div class="dates__box">
+                  <time class="pre__heading pre__heading-todo-time">
+                    Entry Date: {{ todo[0] }}
+                  </time>
+                </div>
+                <div class="todo__container">
+                  <h3 class="heading__tertiary heading__tertiary-todo-heading">
+                    {{ todo[2] }}
+                  </h3>
+                  <p class="todo__text">
+                  <pre class="todo__text-pre">{{ todo[3] }}</pre>
+                  </p>
+                  {# edit button #}
+                  <form class="form__remove"
+                        action="{{ url_for('remove_from_todo', todo_id=todo[4]) }}"
+                        method="POST">
+                    <button class="btn btn__remove"
+                            type="submit">
+                      <ion-icon class="btn__icon"
+                                name="trash-bin-outline"></ion-icon>
+                    </button>
+                  </form>
+
+                  {# add to completed button #}
+                  <form class="form__complete"
+                        action="{{ url_for('complete', todo_id=todo[4]) }}"
+                        method="POST">
+                    <button class="btn btn__complete"
+                            type="submit">
+                      <ion-icon class="btn__icon"
+                                name="checkbox-outline"></ion-icon>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {# right block #}
+      <section class="section__padding section__column section__column-history">
+        <div class="container container__column">
+          <div class="column column__history-column">
+            <div class="column__heading-box">
+              <h2 class="heading__secondary heading__secondary-column-heading"
+                  data-name="To-do's History">
+                To-do's History
+              </h2>
+            </div>
+
+            <div class="column__app-box">
+              {% for complete in get_completed %}
+              <div class="todo todo__completed">
+                <div class="dates__box">
+                  <time class="pre__heading pre__heading-todo-time">
+                    Entry Date: {{ complete[0] }}
+                  </time>
+
+                  <time class="pre__heading pre__heading-todo-time">
+                    Completion Date: {{ complete[1] }}
+                  </time>
+                </div>
+                <div class="todo__container todo__container-completed">
+                  <h3 class="heading__tertiary heading__tertiary-todo-heading">
+                    {{ complete[2] }}
+                  </h3>
+                  <p class="todo__text">
+                  <pre class="todo__text-pre">{{ complete[3] }}</pre>
+                  </p>
+                  <form class="form__remove"
+                        action="{{ url_for('remove_from_complete', complete_id=complete[4]) }}"
+                        method="POST">
+                    <button class="btn btn__remove"
+                            type="submit">
+                      <ion-icon class="btn__icon"
+                                name="trash-bin-outline"></ion-icon>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+{% endblock %}
