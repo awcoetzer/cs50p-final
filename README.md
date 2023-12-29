@@ -2,7 +2,7 @@
 
 #### <a href="https://cs50.harvard.edu/python/2022/project/" alt="CS50P's website">HARVARD | CS50P | FINAL PROJECT OUTLINE</a> 
 
-#### LIVE SITE <a href="https://chores-list-awcoetzer.netlify.app" target="_blank">HERE</a>
+#### LIVE SITE <a href="https://task-juggler.onrender.com">HERE</a>
 
 <img src="https://scholar.harvard.edu/sites/scholar.harvard.edu/files/styles/os_files_xxlarge/public/you/files/logo-harvard.png?m=1703425085&itok=DCrNrNUb" alt="Harvard logo Banner" width="100%">
 
