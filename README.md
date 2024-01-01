@@ -3,6 +3,7 @@
 #### <a href="https://cs50.harvard.edu/python/2022/project/" alt="CS50P's website">HARVARD | CS50P | FINAL PROJECT OUTLINE</a> 
 
 #### LIVE SITE <a href="https://task-juggler.onrender.com">HERE</a>
+#### YOUTUBE VIDEO <a href="https://www.youtube.com/watch?v=_BQFMbmb1T8">HERE</a>
 
 <img src="https://scholar.harvard.edu/sites/scholar.harvard.edu/files/styles/os_files_xxlarge/public/you/files/logo-harvard.png?m=1703425085&itok=DCrNrNUb" alt="Harvard logo Banner" width="100%">
 
@@ -40,9 +41,9 @@ Task Juggler is a Python-based task manager application designed for efficient t
 #### PROJECT SCREENS
 ## How the project looks
 
-<img src="./assets/images/readme/full-project.png" width="50%" alt="screenshot of project, full size version light theme"> <img src="./assets/images/readme/full-project-responsive.png" width="11.76%" alt="screenshot of project, responsive version light theme">
+<img src="./assets/images/readme/full-project.png" width="50%" alt="screenshot of project, full size version light theme"> <img src="./assets/images/readme/full-project-responsive.jpeg" width="5.1%" alt="screenshot of project, responsive version light theme">
 
-<img src="./assets/images/readme/preview-switch-toggle.gif" width="50%" alt="screenshot of project, responsive version">
+<img src="./assets/images/readme/full-project--about.jpeg" width="50%" alt="screenshot of project, full size version light theme"> <img src="./assets/images/readme/full-project--about-responsive.jpeg" width="8.78%" alt="screenshot of project, responsive version light theme">
 
 <br>
 
